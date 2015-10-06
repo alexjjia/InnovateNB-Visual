@@ -8,7 +8,7 @@
       function drawChart() {
         var data = new google.visualization.DataTable();
 
-        var scale = 400;
+        var scale = 400; //Scale used to have the graph fit more easily within browser windows.
 
         data.addColumn('string', 'Revenue');
         data.addColumn('string', 'Budget');
@@ -18,14 +18,13 @@
 
 
           //Quick fix to making the .html load on browser if having difficulty doing so:
-          // 1. Comment out lines 13, 24-88
-          // 2. Un-comment line 20.
+          // 1. Comment out lines 16, 26-95
+          // 2. Un-comment line 25.
           // 3. Reload the page.
           // 4. Do the opposite of steps 1 and 2. (un-comment where commented, and vice versa.)
-            // ['Node A', 'Node B', 2]
-
-
-          //Column 1, General Budget.
+            // ['Node A', 'Node B', 2] //Used as a 'quick-fix' to make the .html file run on certain browsers.
+            
+          //Column 1 General Budget; AKA Revenue Source for General Budget
           [ 'Surplus', 'General Budget', 900000.00/scale, '$900,000.00'],
           [ 'Local Revenues', 'General Budget', 26334793.97/scale, '$26,334,793.97'],
           [ 'State Aid without Offsetting Appropriations', 'General Budget', 15472969.22/scale, '$15,472,969.22'],
@@ -38,20 +37,22 @@
           [ 'Local Tax for Municipal Purposes Including Reserve for Uncollected Taxes', 'General Budget', 30003736.4/scale, '$30,003,736.40'],
           [ 'Addition to Local District School Tax', 'General Budget', 1500256.28/scale, ' $1,500,256.28'],
           [ 'Minimum Library Tax', 'General Budget', 1048365.77/scale, '$1,048,365.77'],
-          //total: 83157227.91
+          //Total: $83,157,227.91
 
-          // Column 1, Water Utility.
+          // Column 1 Water Utility; AKA Revenue Source for Water Utility
           [ 'Rents', 'Water & Sewage Utility Budget', (9548000+11212000)/scale, '$20,760,000'], //$11212000 from Sewage, $9548000 from Water
           [ 'Miscellaneous', 'Water & Sewage Utility Budget', 804298.98/scale, '$804,298.98'],
           [ 'Service to Other Systems', 'Water & Sewage Utility Budget', 1111000/scale, '$1,111,000'],
           [ 'Additional Billings- Ordinance O-121407', 'Water & Sewage Utility Budget', 477000/scale, '$477,000'],
+          //Total: $11,940,298.98
 
-          // Column 1, Sewer Utility
-        //  [ 'Rents', 'Water & Sewage Utility Budget', 11212000],
+          // Column 1 Sewer Utility; AKA Revenue Source for Sewage Utility
+        //[ 'Rents', 'Water & Sewage Utility Budget', 11212000], NOTE: We merged the rents from the Water and Sewage Utility budgets into a single value.
           [ 'Miscellaneous', 'Water & Sewage Utility Budget', 1147395.6/scale, '$1,147,395.60'],
           [ 'Additional Billings- Ordinance O-121408', 'Water & Sewage Utility Budget', 490000/scale, '$490,000'],
+          //Total: $12,849,395.60
 
-          //Column 2 General Budget
+          //Column 2 General Budget; Appropriation Distribution for General Budget.
           [ 'General Budget', 'General Budget Government', 545358/scale, '$545,358'],
           [ 'General Budget', 'Dpt. of Administration', 15823089.74/scale, '$15,823,089.74'],
           [ 'General Budget', 'Dpt. of Policy and Economic Development', 132609.79/scale, '$132,609.79'],
@@ -75,21 +76,24 @@
           [ 'General Budget', 'Local School District Purposes', 2733837.5/scale, '$2,733,837.50'],
           [ 'General Budget', 'Transferred to Board of Education', 760162/scale, '$760,162'],
           [ 'General Budget', 'Reserve for Uncollected Taxes', 366825.79/scale, '$366,825.79'],
+          //Total General Appropriation: $84,056,327.91
 
-          //Column 2 Water Utility
+          //Column 2 Water Utility; AKA Appropriation Distribution for Water Utility.
           [ 'Water & Sewage Utility Budget', 'Operating', 7402771/scale, '$7,402,771'],
           [ 'Water & Sewage Utility Budget', 'Capital Improvements', 160000/scale, '$160,000'],
           [ 'Water & Sewage Utility Budget', 'Debt Service', 2384347.98/scale, '$2,384,347.98'],
           [ 'Water & Sewage Utility Budget', 'Deferred Charges', 580000/scale, '$580,000'],
           [ 'Water & Sewage Utility Budget', 'Statutory Expenditures', 410000/scale, '$410,000'],
           [ 'Water & Sewage Utility Budget', 'Surplus (General Budget)', 1023180/scale, '$1,023,180'], //Leftover funds from General Budget.
+          //Total Water Utility Appropriation: $11,960,298.98
 
-          //Column 2 Sewage Utility
+          //Column 2 Sewage Utility; AKA Appropriation Distribution for Sewage.
           [ 'Water & Sewage Utility Budget', 'Operating', 8346932.5/scale, '$8,346,932.50'],
           [ 'Water & Sewage Utility Budget', 'Capital Improvements', 25000/scale, '$25,000'],
           [ 'Water & Sewage Utility Budget', 'Debt Service', 1279202.46/scale, '$1,279,202.46'],
           [ 'Water & Sewage Utility Budget', 'Statutory Expenditures', 206600/scale, '$206,600'],
           [ 'Water & Sewage Utility Budget', 'Surplus (General Budget)', 2991660.64/scale, '$2,991,660.64'] //Leftover funds from the General Budget.
+          //Total Sewage Utility Appropriation: $12,849,395.60
         ])
 
    var colors = ['990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066']
