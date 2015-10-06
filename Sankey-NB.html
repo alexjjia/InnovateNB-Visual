@@ -12,9 +12,16 @@
         data.addColumn('number', 'Appropriations');
        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html' : true}});
         data.addRows([
-            // ['Node A', 'Node B', 2],
-            // ['Node A', 'Node C', 2],
-            // ['Node C', 'Node D', 1]
+
+
+          //Quick fix to making the .html load on browser if having difficulty doing so:
+          // 1. Comment out lines 13, 24-88
+          // 2. Un-comment line 20.
+          // 3. Reload the page.
+          // 4. Do the opposite of steps 1 and 2. (un-comment where commented, and vice versa.)
+            // ['Node A', 'Node B', 2]
+
+
           //Column 1, General Budget.
           [ 'Surplus', 'General Budget', 900000.00/100, '$900,000.00'],
           [ 'Local Revenues', 'General Budget', 26334793.97/100, '$26,334,793.97'],
@@ -79,10 +86,10 @@
           [ 'Water & Sewage Utility Budget', 'Capital Improvements', 25000/100, '$25,000'],
           [ 'Water & Sewage Utility Budget', 'Debt Service', 1279202.46/100, '$1,279,202.46'],
           [ 'Water & Sewage Utility Budget', 'Statutory Expenditures', 206600/100, '$206,600'],
-          [ 'Water & Sewage Utility Budget', 'Surplus (General Budget)', 2991660.64/100, '$2,991,660.64']
+          [ 'Water & Sewage Utility Budget', 'Surplus (General Budget)', 2991660.64/100, '$2,991,660.64'] //Leftover funds from the General Budget.
         ])
 
-   var colors = ['990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066']//, 'FF0000']
+   var colors = ['990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066']
 
  var options = {
   tooltip: {isHtml: true},
@@ -100,12 +107,10 @@
                         nodePadding: 60,
                         interactivity: true, // Allows you to select nodes.
                         labelPadding: 30,     // Horizontal distance between the label and the node.
-
         },
 
         link: {
           colorMode: 'gradient',
-      //    colors: colors,
           color: {
             fill: '#CCFFFF',
             fillOpacity: 100,
