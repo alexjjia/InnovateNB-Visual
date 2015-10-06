@@ -10,8 +10,11 @@
         data.addColumn('string', 'Revenue');
         data.addColumn('string', 'Budget');
         data.addColumn('number', 'Appropriations');
-        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html' : true}});
+       data.addColumn({type: 'string', role: 'tooltip', 'p': {'html' : true}});
         data.addRows([
+            // ['Node A', 'Node B', 2],
+            // ['Node A', 'Node C', 2],
+            // ['Node C', 'Node D', 1]
           //Column 1, General Budget.
           [ 'Surplus', 'General Budget', 900000.00/100, '$900,000.00'],
           [ 'Local Revenues', 'General Budget', 26334793.97/100, '$26,334,793.97'],
@@ -82,7 +85,7 @@
    var colors = ['990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066', '990066']//, 'FF0000']
 
  var options = {
-   tooltip: {isHtml: true},
+  tooltip: {isHtml: true},
       height: 4000,
       width: 5000,
       sankey: {
@@ -117,6 +120,7 @@
         chart.draw(data, options);
       }
     </script>
+    <h1>Budget for the City of New Brunswick, NJ</h1>
   </head>
   <body>
     <div id="sankey_basic" style="width: 1920px; height: 1080px;"></div>
